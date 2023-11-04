@@ -139,37 +139,5 @@ if(isset($_GET['id']))
 
 }
 ?>
-<?php
-include 'conn.php';
 
-if(isset($_POST['update']))
-{
-   if(isset($_POST['stud_id']))
-   {
-
-   
-            $id=$_POST['stud_id'];
-            $fname=$_POST['fname'];
-            $lname=$_POST['lname'];
-            $address=$_POST['ad'];
-            $gender=$_POST['g'];
-            $email=$_POST['em'];
-            $paswd=$_POST['pwd'];
-            $phno=$_POST['no'];
-            $ctype=$_POST['ctype'];
-
-            $query = "update registry set firstname = '$fname' , lastname = '$lname', address = '$address', gender = '$gender', email = '$email', password = '$paswd', phoneno = '$phno', ctype = '$ctype' where id = '$id'";
-            
-            $queryrun = mysqli_query($con,$query);
-            if($queryrun)
-            {
-                
-                echo "Updated successfully";
-            }
-            else
-            {
-                echo "Not updated successfully";
-            }
-   }
-    }
 
